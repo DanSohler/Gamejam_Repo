@@ -58,6 +58,7 @@ public class EnemyShoot : MonoBehaviour
 
         if (!alreadyAttacked)
         {
+            
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -65,6 +66,7 @@ public class EnemyShoot : MonoBehaviour
 
     private void ResetAttack()
     {
+        theirGun.isFiring = false;
         alreadyAttacked = false;
     }
 }
