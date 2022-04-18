@@ -9,8 +9,13 @@ public class EnemyHealthManager : MonoBehaviour
 
     //Connects enemy to wellbeing manager
     public WellbeingManager wellbeingManager;
-    public int wellbeingID;
+    private int wellbeingID;
     public string wellbeingState;
+
+    private void Awake()
+    {
+        wellbeingManager = FindObjectOfType<WellbeingManager>();
+    }
 
     void Start()
     {

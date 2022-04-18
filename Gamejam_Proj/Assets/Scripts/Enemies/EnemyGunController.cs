@@ -14,6 +14,15 @@ public class EnemyGunController : MonoBehaviour
 
     public Transform firePoint;
 
+    //calls enemies wellbeing state
+    public WellbeingManager wellbeingManager;
+    public EnemyHealthManager yourHealth;
+
+    private void Awake()
+    {
+        wellbeingManager = FindObjectOfType<WellbeingManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {

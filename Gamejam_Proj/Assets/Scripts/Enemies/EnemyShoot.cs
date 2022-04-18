@@ -12,7 +12,6 @@ public class EnemyShoot : MonoBehaviour
     public LayerMask whatIsPlayer;
 
     //attacking
-    public float timeBetweenAttacks;
     bool alreadyAttacked;
 
     //States
@@ -60,7 +59,7 @@ public class EnemyShoot : MonoBehaviour
         {
             
             alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            Invoke(nameof(ResetAttack), theirGun.timeBetweenShots);
         }
     }
 

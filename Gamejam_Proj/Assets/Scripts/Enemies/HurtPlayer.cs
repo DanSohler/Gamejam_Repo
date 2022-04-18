@@ -38,14 +38,10 @@ public class HurtPlayer : MonoBehaviour
             {
                 wellbeingManager.HitMoney();
             }
-
-
-            {
-
-
+            
                 //Destroys enemy when they collide with player
                 Destroy(enemyObj);
-            }
+            
         }
     }
 

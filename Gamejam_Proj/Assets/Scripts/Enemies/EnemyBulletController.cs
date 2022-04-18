@@ -5,24 +5,21 @@ using UnityEngine;
 public class EnemyBulletController : MonoBehaviour
 {
     public float speed;
-    public float bulletDecay;
     public int bulletDamage;
 
     //calls enemies wellbeing state
     public WellbeingManager wellbeingManager;
-    private EnemyHealthManager yourHealth;
+    public EnemyHealthManager yourHealth;
 
     private void Awake()
     {
-        yourHealth = GetComponent<EnemyHealthManager>();
-        wellbeingManager = GetComponent<WellbeingManager>();
+        wellbeingManager = FindObjectOfType<WellbeingManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        Destroy(gameObject, bulletDecay);
     }
     void OnTriggerEnter(Collider other)
     {
@@ -30,6 +27,22 @@ public class EnemyBulletController : MonoBehaviour
         {
             //put stat damage here
 
+            if (yourHealth.wellbeingState == "Social")
+            {
+                wellbeingManager.HitSocial();
+            }
+            else if (yourHealth.wellbeingState == "Physical")
+            {
+                wellbeingManager.HitPhysical();
+            }
+            else if (yourHealth.wellbeingState == "Academic")
+            {
+                wellbeingManager.HitAcademic();
+            }
+            else if (yourHealth.wellbeingState == "Financial")
+            {
+                wellbeingManager.HitMoney();
+            }
 
             Destroy(gameObject);
 

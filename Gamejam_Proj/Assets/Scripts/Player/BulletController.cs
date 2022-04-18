@@ -14,8 +14,7 @@ public class BulletController : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         Destroy(gameObject, bulletDecay);
     }
-
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
