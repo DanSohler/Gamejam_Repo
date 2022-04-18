@@ -5,6 +5,7 @@ using UnityEngine;
 public class HurtPlayer : MonoBehaviour
 {
     public int damageToGive;
+    public GameObject enemyObj;
 
 
     public void OnTriggerEnter(Collider other)
@@ -14,7 +15,7 @@ public class HurtPlayer : MonoBehaviour
             Debug.Log("Hey, got you!");
 
             //Destroys enemy when they collide with player
-            Destroy(gameObject);
+            Destroy(enemyObj);
 
             //other.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(damageToGive);
         }

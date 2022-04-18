@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToGive: 1
+  enemyObj: {fileID: 4822338543546365290}
 --- !u!1 &9012436260108558508
 GameObject:
   m_ObjectHideFlags: 0
