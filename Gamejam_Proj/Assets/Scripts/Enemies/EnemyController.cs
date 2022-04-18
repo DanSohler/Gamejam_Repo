@@ -22,6 +22,6 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(thePlayer.transform.position);
+        transform.LookAt(new Vector3(thePlayer.transform.position.x, transform.position.y, thePlayer.transform.position.z));
     }
 }

@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 9183984189719971479}
   m_Layer: 0
   m_Name: GamePrefab_FixedCamera
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 5427769173225116867}
   - component: {fileID: 5427769173225116863}
   - component: {fileID: 5427769173225116860}
+  - component: {fileID: 798444293932475688}
   m_Layer: 0
   m_Name: ExampleController
   m_TagString: Untagged
@@ -398,6 +399,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &798444293932475688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5427769173225116866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58681bd5430eba4ab01cbfd334d5096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 10
+  currentHealth: 0
 --- !u!1 &5441508906845605372
 GameObject:
   m_ObjectHideFlags: 0
