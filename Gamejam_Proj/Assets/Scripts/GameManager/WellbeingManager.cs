@@ -25,11 +25,16 @@ public class WellbeingManager : MonoBehaviour
     public float academicAdd;
     public float moneyAdd;
 
+    public float damageValue;
+
+    public bool isDead;
+
     // Update is called once per frame
     void Update()
     {
         TimerManager();
         SliderChange();
+        DeathCheck();
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -51,8 +56,17 @@ public class WellbeingManager : MonoBehaviour
 
     }
 
+    void DeathCheck()
+    {
+        if (socialVal <= 0 || physicalVal <= 0 || academicVal <= 0|| moneyVal <= 0)
+        {
+            isDead = true;
+        }
+    }
+
+
     //Value Bump
-    void SocialAdd()
+    public void SocialAdd()
     {
         socialVal = socialVal + socialAdd;
         if (socialVal > 1)
@@ -61,7 +75,7 @@ public class WellbeingManager : MonoBehaviour
         }
     }
     
-    void PhysicalAdd()
+    public void PhysicalAdd()
     {
         physicalVal = physicalVal + physicalAdd;
         if (physicalVal > 1)
@@ -70,7 +84,7 @@ public class WellbeingManager : MonoBehaviour
         }
     }
 
-    void AcademicAdd()
+    public void AcademicAdd()
     {
         academicVal = academicVal + academicAdd;
         if (academicVal > 1)
@@ -79,7 +93,7 @@ public class WellbeingManager : MonoBehaviour
         }
     }
 
-    void MoneyAdd()
+    public void MoneyAdd()
     {
         moneyVal = moneyVal + moneyAdd;
         if (moneyVal > 1)
@@ -88,6 +102,38 @@ public class WellbeingManager : MonoBehaviour
         }
     }
 
+    //Damage Voids
+    //Hit means, it hurts everything but the labelled stat
+
+    public void HitSocial()
+    {
+        physicalVal = physicalVal - damageValue;
+        academicVal = academicVal - damageValue;
+        moneyVal = moneyVal - damageValue;
+    }
+
+    public void HitPhysical()
+    {
+        socialVal = socialVal - damageValue;
+        academicVal = academicVal - damageValue;
+        moneyVal = moneyVal - damageValue;
+    }
+
+    public void HitAcademic()
+    {
+        socialVal = socialVal - damageValue;
+        physicalVal = physicalVal - damageValue;
+        moneyVal = moneyVal - damageValue;
+    }   
+    
+    public void HitMoney()
+    {
+        socialVal = socialVal - damageValue;
+        physicalVal = physicalVal - damageValue;
+        academicVal = academicVal - damageValue;
+    }
+
+        //Functional Voids
 
     void SliderChange()
     {
