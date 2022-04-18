@@ -8,6 +8,16 @@ public class EnemyBulletController : MonoBehaviour
     public float bulletDecay;
     public int bulletDamage;
 
+    //calls enemies wellbeing state
+    public WellbeingManager wellbeingManager;
+    private EnemyHealthManager yourHealth;
+
+    private void Awake()
+    {
+        yourHealth = GetComponent<EnemyHealthManager>();
+        wellbeingManager = GetComponent<WellbeingManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +28,8 @@ public class EnemyBulletController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            //put stat damage here
+
 
             Destroy(gameObject);
 

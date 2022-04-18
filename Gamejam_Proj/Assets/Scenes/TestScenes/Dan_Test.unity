@@ -556,6 +556,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae718477ecccec548b23f10af13704cf, type: 3}
+--- !u!114 &802060766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
+  m_PrefabInstance: {fileID: 1079686276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e995efa37e54a646b16a1ec22075549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &865743896
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +967,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
+      propertyPath: damageValue
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3245186542115894889, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1095,6 +1110,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 99777406187632606, guid: a366ad1855b9ead4abc5797e2dafa9d7, type: 3}
+      propertyPath: wellbeingManager
+      value: 
+      objectReference: {fileID: 802060766}
     - target: {fileID: 240829267633794464, guid: a366ad1855b9ead4abc5797e2dafa9d7, type: 3}
       propertyPath: moveSpeed
       value: 1
