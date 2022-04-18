@@ -14,14 +14,6 @@ public class GunController : MonoBehaviour
 
     public Transform firePoint;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -39,9 +31,5 @@ public class GunController : MonoBehaviour
         {
             shotCounter = 0;
         }
-
-
-
-
     }
 }

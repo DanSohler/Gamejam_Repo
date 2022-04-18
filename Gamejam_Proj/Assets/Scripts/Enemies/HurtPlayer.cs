@@ -12,7 +12,10 @@ public class HurtPlayer : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Hey, got you!");
-            
+
+            //Destroys enemy when they collide with player
+            Destroy(gameObject);
+
             //other.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(damageToGive);
         }
     }
