@@ -15,10 +15,14 @@ public class TDC_Script : MonoBehaviour
     public float turnSmoothTime = 0.08f;
     float turnSmoothVelocity;
 
+    //main cam
+    private Camera mainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
         speed = SetSpeed;
+        mainCamera = FindObjectOfType<Camera>();
     }
 
     // Update is called once per frame
@@ -43,6 +47,17 @@ public class TDC_Script : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             characterController.Move(moveDir * speed * Time.deltaTime);
         }
+
+        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        float rayLength;
+
+        if (groundPlane.Raycast(cameraRay, out rayLength))
+        {
+            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+            transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
+        }
+
 
     }
 }
