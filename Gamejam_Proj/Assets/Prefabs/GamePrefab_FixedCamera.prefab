@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4861088533567565996}
   - component: {fileID: 7959994631645555939}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: GunMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -489,6 +489,7 @@ MonoBehaviour:
   SetSpeed: 5
   characterController: {fileID: 5427769173225116860}
   turnSmoothTime: 0.08
+  theGun: {fileID: 7943492190273996632}
 --- !u!143 &5427769173225116860
 CharacterController:
   m_ObjectHideFlags: 0
@@ -670,8 +671,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3229929937760124191}
+  - component: {fileID: 7943492190273996632}
   m_Layer: 0
-  m_Name: GunPos
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,6 +695,23 @@ Transform:
   m_Father: {fileID: 5427769173225116862}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7943492190273996632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7232820278339695632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f3fe6dbe5872d47ae0ab27bccb819c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFiring: 0
+  bullet: {fileID: 2318343701897813272, guid: b6e257f8105dab14382811ff115a47f8, type: 3}
+  bulletSpeed: 5
+  timeBetweenShots: 0.1
+  firePoint: {fileID: 8794724930039027551}
 --- !u!1 &8065906789616697647
 GameObject:
   m_ObjectHideFlags: 0
