@@ -20,12 +20,15 @@ public class TDC_Script : MonoBehaviour
 
     //gun
     public GunController theGun;
+    public GameObject[] activeGun = new GameObject[3];
+    public int currentGun;
 
     // Start is called before the first frame update
     void Start()
     {
         speed = SetSpeed;
         mainCamera = FindObjectOfType<Camera>();
+        activeGun[currentGun].GetComponent<GunController>();
     }
 
     // Update is called once per frame
@@ -51,6 +54,7 @@ public class TDC_Script : MonoBehaviour
             characterController.Move(moveDir * speed * Time.deltaTime);
         }
 
+        //Sets player's rotation to where the mouse is
         Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
         float rayLength;
@@ -61,14 +65,32 @@ public class TDC_Script : MonoBehaviour
             transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
         }
 
+
+        //Shoots gun
         if (Input.GetMouseButtonDown(0))
         {
-            theGun.isFiring = true;
+            activeGun[currentGun].GetComponent<GunController>().isFiring = true;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            theGun.isFiring = false;
+            activeGun[currentGun].GetComponent<GunController>().isFiring = false;
         }
     }
+
+    public void SetGun(int newWeapon)
+    {
+        activeGun[0].SetActive(false);
+        activeGun[1].SetActive(false);
+        activeGun[2].SetActive(false);
+
+        //sets active gun to current selected upgrade
+        currentGun = newWeapon;
+        activeGun[currentGun].SetActive(true);
+
+
+
+
+    }
+
 }
