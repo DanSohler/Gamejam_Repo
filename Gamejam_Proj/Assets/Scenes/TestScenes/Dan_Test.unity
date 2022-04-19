@@ -5392,7 +5392,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
+      propertyPath: academicAdd
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
       propertyPath: damageValue
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
+      propertyPath: physicalAdd
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
@@ -6045,6 +6053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583161071}
   - component: {fileID: 1583161070}
+  - component: {fileID: 1583161072}
   m_Layer: 0
   m_Name: AcManager
   m_TagString: Untagged
@@ -6064,6 +6073,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a73e91a7268e143b114529bf879086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inAca: 0
+  wellbeingManager: {fileID: 1510833570}
 --- !u!4 &1583161071
 Transform:
   m_ObjectHideFlags: 0
@@ -6078,6 +6089,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1583161072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583161069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14, y: 9, z: 14}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1641909677
 GameObject:
   m_ObjectHideFlags: 0

@@ -111,16 +111,12 @@ public class WellbeingManager : MonoBehaviour
         }
     }
 
-
-    //Regens over time values
-   
-
-
     //Damage Voids
     //Hit means, it hurts everything but the labelled stat
 
     public void HitSocial()
     {
+        socialVal = socialVal - damageValue;
         physicalVal = physicalVal - damageValue;
         academicVal = academicVal - damageValue;
         moneyVal = moneyVal - damageValue;
@@ -128,6 +124,7 @@ public class WellbeingManager : MonoBehaviour
 
     public void HitPhysical()
     {
+        physicalVal = physicalVal - damageValue;
         socialVal = socialVal - damageValue;
         academicVal = academicVal - damageValue;
         moneyVal = moneyVal - damageValue;
@@ -135,6 +132,7 @@ public class WellbeingManager : MonoBehaviour
 
     public void HitAcademic()
     {
+        academicVal = academicVal - damageValue;
         socialVal = socialVal - damageValue;
         physicalVal = physicalVal - damageValue;
         moneyVal = moneyVal - damageValue;
@@ -142,6 +140,7 @@ public class WellbeingManager : MonoBehaviour
     
     public void HitMoney()
     {
+        moneyVal = moneyVal - damageValue;
         socialVal = socialVal - damageValue;
         physicalVal = physicalVal - damageValue;
         academicVal = academicVal - damageValue;
