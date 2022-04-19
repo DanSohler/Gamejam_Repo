@@ -29,6 +29,13 @@ public class WellbeingManager : MonoBehaviour
 
     public bool isDead;
 
+    //Bools to stop decay
+    public bool socialRegen = false;
+    public bool physicalRegen = false;
+    public bool academicRegen = false;
+    public bool moneyRegen = false;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -36,6 +43,8 @@ public class WellbeingManager : MonoBehaviour
         SliderChange();
         DeathCheck();
 
+        //Debug section
+        /*
         if (Input.GetKeyDown(KeyCode.E))
         {
             SocialAdd();
@@ -52,7 +61,7 @@ public class WellbeingManager : MonoBehaviour
         {
             MoneyAdd();
         }
-
+        */
 
     }
 
@@ -102,6 +111,11 @@ public class WellbeingManager : MonoBehaviour
         }
     }
 
+
+    //Regens over time values
+   
+
+
     //Damage Voids
     //Hit means, it hurts everything but the labelled stat
 
@@ -146,33 +160,78 @@ public class WellbeingManager : MonoBehaviour
     //Timer
     void TimerManager()
     {
-        StartCoroutine(SocialDecrease());
-        StartCoroutine(PhysicalDecrease());
-        StartCoroutine(AcademicDecrease());
-        StartCoroutine(MoneyDecrease());
+        if (socialRegen)
+        {
+            //StartCoroutine(RegenSocial()); //
+            StopCoroutine(SocialDecrease());
+
+            StartCoroutine(PhysicalDecrease());
+            StartCoroutine(AcademicDecrease());
+            StartCoroutine(MoneyDecrease());
+        }
+        else if (physicalRegen)
+        {
+            StartCoroutine(SocialDecrease());
+
+            //StartCoroutine(RegenPhysical()); //
+            StopCoroutine(PhysicalDecrease());
+
+            StartCoroutine(AcademicDecrease());
+            StartCoroutine(MoneyDecrease());
+        }
+        else if (academicRegen)
+        {
+            StartCoroutine(SocialDecrease());
+            StartCoroutine(PhysicalDecrease());
+
+            //StartCoroutine(RegenAcademic()); //
+            StopCoroutine(AcademicDecrease());
+
+            StartCoroutine(MoneyDecrease());
+        }
+        else if (moneyRegen)
+        {
+            StartCoroutine(SocialDecrease());
+            StartCoroutine(PhysicalDecrease());
+            StartCoroutine(AcademicDecrease());
+
+            //StartCoroutine(RegenMoney()); //
+            StopCoroutine(MoneyDecrease());
+        }
+        else
+        {
+            StartCoroutine(SocialDecrease());
+            StartCoroutine(PhysicalDecrease());
+            StartCoroutine(AcademicDecrease());
+            StartCoroutine(MoneyDecrease());
+        }
     }
 
-    IEnumerator SocialDecrease()
+    // Decays stats
+    public IEnumerator SocialDecrease()
     {
         socialVal = (socialVal - fallSpeed * Time.deltaTime);
         yield return null;
     }
 
-    IEnumerator PhysicalDecrease()
+    public IEnumerator PhysicalDecrease()
     {
         physicalVal = (physicalVal - fallSpeed * Time.deltaTime);
         yield return null;
     }
 
-    IEnumerator AcademicDecrease()
+    public IEnumerator AcademicDecrease()
     {
         academicVal = (academicVal - fallSpeed * Time.deltaTime);
         yield return null;
     }
 
-    IEnumerator MoneyDecrease()
+    public IEnumerator MoneyDecrease()
     {
         moneyVal = (moneyVal - fallSpeed * Time.deltaTime);
         yield return null;
     }
+
+
+
 }
