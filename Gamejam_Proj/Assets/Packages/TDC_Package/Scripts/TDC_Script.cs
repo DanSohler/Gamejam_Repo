@@ -87,10 +87,6 @@ public class TDC_Script : MonoBehaviour
         //sets active gun to current selected upgrade
         currentGun = newWeapon;
         activeGun[currentGun].SetActive(true);
-
-
-
-
     }
 
 }

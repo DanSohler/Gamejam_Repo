@@ -51,14 +51,5 @@ public class MoneyPointScript : MonoBehaviour
 
             }
         }
-
-
-        /*  if (moneyManager.boxGrabbed == true)
-          {
-              if (other.gameObject.tag == "Player")
-              {
-                  wellbeingManager.MoneyAdd();
-              }
-          } */
     }
 }
