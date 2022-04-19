@@ -14,6 +14,10 @@ public class SocialPoint : MonoBehaviour
         {
             StartCoroutine(SocialTimer());
         }
+        else
+        {
+            StopCoroutine(SocialTimer());
+        }
     }
 
     private void OnTriggerEnter(Collider other)
