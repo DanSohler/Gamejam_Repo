@@ -6,6 +6,7 @@ public class RegenVolume : MonoBehaviour
 {
     public WellbeingManager wellbeingManager;
     public EnemySpawner enemySpawner;
+    public BoxScript boxScript;
     [Tooltip("0 = Social, 1 = Physical, 2 = Academic, 3 = Financial")]
     public int currentState;
     public bool playerEntered = false;
@@ -15,6 +16,10 @@ public class RegenVolume : MonoBehaviour
 
     #region Checks
 
+    private void Awake()
+    {
+        boxScript = FindObjectOfType<BoxScript>();
+    }
 
     void EnemyCall()
     {
@@ -69,6 +74,7 @@ public class RegenVolume : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
+                boxScript.BoxOff();
                 wellbeingManager.moneyRegen = true;
                 playerEntered = true;
                 EnemyCall();
@@ -116,6 +122,7 @@ public class RegenVolume : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
+                boxScript.BoxOff();
                 EnemyCull();
                 wellbeingManager.moneyRegen = false;
                 playerEntered = false;

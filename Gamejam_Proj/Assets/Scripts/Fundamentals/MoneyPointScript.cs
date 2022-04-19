@@ -6,12 +6,14 @@ public class MoneyPointScript : MonoBehaviour
 {
     public MoneyPointManager moneyManager;
     public WellbeingManager wellbeingManager;
+    public BoxScript boxScript;
 
 
 
     private void Awake()
     {
         wellbeingManager = FindObjectOfType<WellbeingManager>();
+        boxScript = FindObjectOfType<BoxScript>();
     }
 
 
@@ -20,7 +22,7 @@ public class MoneyPointScript : MonoBehaviour
 
         if (moneyManager.boxGrabbed == false)
         {
-
+            boxScript.BoxOn();
             if (other.gameObject.tag == "Player")
             {
 
@@ -39,6 +41,7 @@ public class MoneyPointScript : MonoBehaviour
             if (other.gameObject.tag == "Player")
             {
                 moneyManager.boxGrabbed = false;
+                boxScript.BoxOff();
                 wellbeingManager.MoneyAdd();
 
                 moneyManager.chosenPointA = Random.Range(0, 9);

@@ -10,6 +10,7 @@ public class TDC_Script : MonoBehaviour
 
     //cc
     public CharacterController characterController;
+    
 
     //smooth turning Values
     public float turnSmoothTime = 0.08f;
