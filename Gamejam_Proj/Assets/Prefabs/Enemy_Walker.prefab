@@ -129,7 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   wellbeingManager: {fileID: 0}
-  wellbeingID: 0
+  regenScript: {fileID: 0}
+  wellbeingID: 1
   wellbeingState: 
 --- !u!54 &5859718425778235541
 Rigidbody:
@@ -190,8 +191,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.53604704}
+  m_Center: {x: 0, y: 0, z: -0.2319774}
 --- !u!114 &2293995536638239482
 MonoBehaviour:
   m_ObjectHideFlags: 0
