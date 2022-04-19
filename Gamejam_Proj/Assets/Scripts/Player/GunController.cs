@@ -67,6 +67,7 @@ public class GunController : MonoBehaviour
             }
         }
 
+        /*
         // for the Boom
         if (currentGunType == 2)
         {
@@ -84,6 +85,6 @@ public class GunController : MonoBehaviour
             {
                 shotCounter = 0;
             }
-        }
+        } */
     }
 }
