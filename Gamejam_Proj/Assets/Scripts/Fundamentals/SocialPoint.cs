@@ -9,7 +9,7 @@ public class SocialPoint : MonoBehaviour
     private bool isInArea = false;
 
     private void Update()
-    {
+    {   
         if (isInArea)
         {
             StartCoroutine(SocialTimer());
@@ -22,13 +22,16 @@ public class SocialPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isInArea = true;
+        if (other.gameObject.tag == "Player")
+        {
+            isInArea = true;
+        }
     }
 
 
     public IEnumerator SocialTimer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
         wellbeingManager.SocialAdd();
     }
 

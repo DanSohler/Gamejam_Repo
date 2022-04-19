@@ -138,7 +138,6 @@ public class RegenVolume : MonoBehaviour
     {
         while (playerEntered && !coroutineBreaker)
         {
-            Debug.Log("Hey fucker");
             enemySpawner.SpawnEnemy();
             yield return new WaitForSeconds(spawnDelay);
         }

@@ -18,7 +18,6 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemy()
     {
         compChoice = Random.Range(0, 2);
-        Debug.Log(compChoice);
         if (compChoice == 0)
         {
             spawnLocation = Random.Range(0, 4);
