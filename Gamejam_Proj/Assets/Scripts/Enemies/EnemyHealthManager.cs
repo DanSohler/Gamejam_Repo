@@ -9,33 +9,35 @@ public class EnemyHealthManager : MonoBehaviour
 
     //Connects enemy to wellbeing manager
     public WellbeingManager wellbeingManager;
-    private int wellbeingID;
+    public RegenVolume regenScript;
+    [Tooltip("0 = Social, 1 = Physical, 2 = Academic, 3 = Financial")]
+    [Range(0, 3)] public int wellbeingID;
     public string wellbeingState;
 
     private void Awake()
     {
         wellbeingManager = FindObjectOfType<WellbeingManager>();
+        regenScript = FindObjectOfType<RegenVolume>();
     }
 
     void Start()
     {
         currentHealth = health;
-        // will produce a number thats either 1, 2, 3 or 4
-        wellbeingID = Random.Range(1, 5);
+        wellbeingID = regenScript.currentState;
 
-        if (wellbeingID == 1)
+        if (wellbeingID == 0)
         {
             wellbeingState = "Social";
         }
-        else if (wellbeingID == 2)
+        else if (wellbeingID == 1)
         {
             wellbeingState = "Physical";
         }
-        else if (wellbeingID == 3)
+        else if (wellbeingID == 2)
         {
             wellbeingState = "Academic";
         }
-        else if (wellbeingID == 4)
+        else if (wellbeingID == 3)
         {
             wellbeingState = "Financial";
         }
