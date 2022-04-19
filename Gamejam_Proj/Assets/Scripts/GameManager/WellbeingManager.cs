@@ -204,11 +204,6 @@ public class WellbeingManager : MonoBehaviour
             StartCoroutine(PhysicalDecrease());
             StartCoroutine(AcademicDecrease());
             StartCoroutine(MoneyDecrease());
-
-            StopCoroutine(RegenSocial());
-            StopCoroutine(RegenPhysical());
-            StopCoroutine(RegenAcademic());
-            StopCoroutine(RegenMoney());
         }
     }
 
@@ -239,29 +234,4 @@ public class WellbeingManager : MonoBehaviour
 
 
 
-    // Regens Stats
-
-    public IEnumerator RegenSocial()
-    {
-        socialVal = (socialVal  + fallSpeed * Time.deltaTime);
-        yield return null;
-    }
-
-    public IEnumerator RegenPhysical()
-    {
-        physicalVal = (physicalVal + fallSpeed * Time.deltaTime);
-        yield return null;
-    }
-
-    public IEnumerator RegenAcademic()
-    {
-        academicVal = (academicVal + fallSpeed * Time.deltaTime);
-        yield return null;
-    }
-
-    public IEnumerator RegenMoney()
-    {
-        moneyVal = (moneyVal + fallSpeed * Time.deltaTime);
-        yield return null;
-    }
 }
