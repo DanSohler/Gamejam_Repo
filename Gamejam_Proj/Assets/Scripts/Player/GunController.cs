@@ -17,6 +17,8 @@ public class GunController : MonoBehaviour
     public GameObject[] firePoint = new GameObject[5];
     private int currentGunType;
 
+    public Animator playerAnom;
+
 
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class GunController : MonoBehaviour
                 shotCounter -= Time.deltaTime;
                 if (shotCounter <= 0)
                 {
+                    playerAnom.SetTrigger("Shoot");
                     shotCounter = timeBetweenShots;
                     BulletController newBullet = Instantiate(bullet, firePoint[0].transform.position, firePoint[0].transform.rotation) as BulletController;
                     newBullet.speed = bulletSpeed;
@@ -52,6 +55,7 @@ public class GunController : MonoBehaviour
                 shotCounter -= Time.deltaTime;
                 if (shotCounter <= 0)
                 {
+                    playerAnom.SetTrigger("Shoot");
                     shotCounter = timeBetweenShots;
                     BulletController newBullet = Instantiate(bullet, firePoint[0].transform.position, firePoint[0].transform.rotation) as BulletController;
                     newBullet.speed = bulletSpeed;
