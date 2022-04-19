@@ -10,6 +10,8 @@ public class EnemyHealthManager : MonoBehaviour
     //Connects enemy to wellbeing manager
     public WellbeingManager wellbeingManager;
     public RegenVolume regenScript;
+    public AcademicManager acaMan;
+
     [Tooltip("0 = Social, 1 = Physical, 2 = Academic, 3 = Financial")]
     [Range(0, 3)] public int wellbeingID;
     public string wellbeingState;
@@ -18,6 +20,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
         wellbeingManager = FindObjectOfType<WellbeingManager>();
         regenScript = FindObjectOfType<RegenVolume>();
+        acaMan = FindObjectOfType<AcademicManager>();
     }
 
     void Start()
@@ -48,6 +51,11 @@ public class EnemyHealthManager : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
+            
+            if (acaMan.inAca == true)
+            {
+                wellbeingManager.AcademicAdd();
+            }
             Destroy(gameObject);
         }
     }
