@@ -18,6 +18,7 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemy()
     {
         compChoice = Random.Range(0, 2);
+        Debug.Log(compChoice);
         if (compChoice == 0)
         {
             spawnLocation = Random.Range(0, 4);
@@ -39,21 +40,16 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-
-
-
     public IEnumerator spawnWalk(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, spawnLocationArray[spawnLocation].transform.position,Quaternion.identity);
-
     }
 
     public IEnumerator spawnShoot(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, spawnLocationArray[spawnLocation].transform.position, Quaternion.identity);
-
     }
 
 }

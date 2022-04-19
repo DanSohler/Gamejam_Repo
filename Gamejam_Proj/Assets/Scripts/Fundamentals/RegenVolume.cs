@@ -10,7 +10,7 @@ public class RegenVolume : MonoBehaviour
     public int currentState;
     public bool playerEntered = false;
     public float spawnDelay;
-    private bool coroutineBreaker = false;
+    public bool coroutineBreaker = false;
 
 
     #region Checks
@@ -18,6 +18,7 @@ public class RegenVolume : MonoBehaviour
 
     void EnemyCall()
     {
+        
         coroutineBreaker = false;
         StartCoroutine(spawnEnemyInScene());
     }
@@ -39,8 +40,8 @@ public class RegenVolume : MonoBehaviour
             if (other.gameObject.tag == "Player")
             {
                 wellbeingManager.socialRegen = true;
-                EnemyCall();
                 playerEntered = true;
+                EnemyCall();
             }
         }
 
@@ -49,8 +50,8 @@ public class RegenVolume : MonoBehaviour
             if (other.gameObject.tag == "Player")
             {
                 wellbeingManager.physicalRegen = true;
-                EnemyCall();
                 playerEntered = true;
+                EnemyCall();
             }
         }
 
@@ -59,8 +60,8 @@ public class RegenVolume : MonoBehaviour
             if (other.gameObject.tag == "Player")
             {
                 wellbeingManager.academicRegen = true;
-                EnemyCall();
                 playerEntered = true;
+                EnemyCall();
             }
         }
 
@@ -69,8 +70,8 @@ public class RegenVolume : MonoBehaviour
             if (other.gameObject.tag == "Player")
             {
                 wellbeingManager.moneyRegen = true;
-                EnemyCall();
                 playerEntered = true;
+                EnemyCall();
             }
         }
     }
@@ -85,7 +86,7 @@ public class RegenVolume : MonoBehaviour
                 EnemyCull();
                 wellbeingManager.socialRegen = false;
                 playerEntered = false;
-                EnemyCull();
+                coroutineBreaker = false;
             }
         }
 
@@ -96,7 +97,7 @@ public class RegenVolume : MonoBehaviour
                 EnemyCull();
                 wellbeingManager.physicalRegen = false;
                 playerEntered = false;
-                EnemyCull();
+                coroutineBreaker = false;
             }
         }
 
@@ -107,7 +108,7 @@ public class RegenVolume : MonoBehaviour
                 EnemyCull();
                 wellbeingManager.academicRegen = false;
                 playerEntered = false;
-                EnemyCull();
+                coroutineBreaker = false;
             }
         }
 
@@ -118,7 +119,7 @@ public class RegenVolume : MonoBehaviour
                 EnemyCull();
                 wellbeingManager.moneyRegen = false;
                 playerEntered = false;
-                EnemyCull();
+                coroutineBreaker = false;
             }
         }
     }
@@ -130,6 +131,7 @@ public class RegenVolume : MonoBehaviour
     {
         while (playerEntered && !coroutineBreaker)
         {
+            Debug.Log("Hey fucker");
             enemySpawner.SpawnEnemy();
             yield return new WaitForSeconds(spawnDelay);
         }
