@@ -81,8 +81,8 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: RobotDeath
-    clip: {fileID: 8300000, guid: 50e77f85709833045a5e5dc665b403c8, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: d764ccfa569566b48b32aaf0104e41b3, type: 3}
+    volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}
@@ -95,6 +95,12 @@ MonoBehaviour:
   - name: Tick
     clip: {fileID: 8300000, guid: b5687c5b6e0190d469131aa0044b252b, type: 3}
     volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Upgrade
+    clip: {fileID: 8300000, guid: 4dcfc7bb7813f20469d2fd05a8baaf7c, type: 3}
+    volume: 0.5
     pitch: 0
     loop: 0
     source: {fileID: 0}
