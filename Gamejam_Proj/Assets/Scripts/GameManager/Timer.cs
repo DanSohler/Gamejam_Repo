@@ -9,8 +9,8 @@ public class Timer : MonoBehaviour
     public TMPro.TMP_Text timer;
     public GameObject victory;
 
-    float currentTime;
-    float startingTime = 180;
+     float currentTime;
+     float startingTime = 180;
     bool timerbool;
 
 
