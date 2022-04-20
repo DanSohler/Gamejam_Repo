@@ -79,6 +79,7 @@ public class Timer : MonoBehaviour
     IEnumerator WaitForEndGame()
     {
         //FindObjectOfType<AudioManagerScript>().StopPlaying("OST");
+        amScript.StopPlaying("OST");
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(1);
     }

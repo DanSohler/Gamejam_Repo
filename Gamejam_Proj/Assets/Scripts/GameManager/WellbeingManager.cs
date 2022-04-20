@@ -41,9 +41,20 @@ public class WellbeingManager : MonoBehaviour
     public Animator canvas;
 
 
-    private void Start()
+    //Sound
+    public GameObject am;
+    public AudioManagerScript amScript;
+
+
+    public void Start()
     {
-        FindObjectOfType<AudioManagerScript>().Play("OST");
+        //FindObjectOfType<AudioManagerScript>().Play("OST")
+
+        //Sound
+        am = GameObject.FindWithTag("AM");
+        amScript = am.GetComponent<AudioManagerScript>();
+
+        amScript.Play("OST");
     }
 
 
@@ -84,8 +95,10 @@ public class WellbeingManager : MonoBehaviour
 
     IEnumerator GameOver()
     {
-        FindObjectOfType<AudioManagerScript>().StopPlaying("OST");
-        FindObjectOfType<AudioManagerScript>().Play("Death");
+        //FindObjectOfType<AudioManagerScript>().StopPlaying("OST");
+        amScript.StopPlaying("OST");
+        //FindObjectOfType<AudioManagerScript>().Play("Death");
+        amScript.Play("Death");
         canvas.SetTrigger("GameOver");
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(2);
@@ -112,7 +125,9 @@ public class WellbeingManager : MonoBehaviour
     
     public void PhysicalAdd()
     {
-        FindObjectOfType<AudioManagerScript>().Play("Gain");
+        //FindObjectOfType<AudioManagerScript>().Play("Gain");
+        amScript.Play("Gain");
+
         physicalVal = physicalVal + physicalAdd;
         if (physicalVal > 1)
         {
@@ -122,7 +137,9 @@ public class WellbeingManager : MonoBehaviour
 
     public void AcademicAdd()
     {
-        FindObjectOfType<AudioManagerScript>().Play("Gain");
+        //FindObjectOfType<AudioManagerScript>().Play("Gain");
+        amScript.Play("Gain");
+
         academicVal = academicVal + academicAdd;
         if (academicVal > 1)
         {
@@ -132,7 +149,8 @@ public class WellbeingManager : MonoBehaviour
 
     public void MoneyAdd()
     {
-        FindObjectOfType<AudioManagerScript>().Play("Gain");
+        //FindObjectOfType<AudioManagerScript>().Play("Gain");
+        amScript.Play("Gain");
         moneyVal = moneyVal + moneyAdd;
         if (moneyVal > 1)
         {
@@ -149,7 +167,8 @@ public class WellbeingManager : MonoBehaviour
         physicalVal = physicalVal - damageValue;
         academicVal = academicVal - damageValue;
         moneyVal = moneyVal - damageValue;
-        FindObjectOfType<AudioManagerScript>().Play("Hurt");
+        //FindObjectOfType<AudioManagerScript>().Play("Hurt");
+        amScript.Play("Hurt");
 
     }
 
@@ -159,7 +178,8 @@ public class WellbeingManager : MonoBehaviour
         socialVal = socialVal - damageValue;
         academicVal = academicVal - damageValue;
         moneyVal = moneyVal - damageValue;
-        FindObjectOfType<AudioManagerScript>().Play("Hurt");
+        //FindObjectOfType<AudioManagerScript>().Play("Hurt");
+        amScript.Play("Hurt");
     }
 
     public void HitAcademic()
@@ -168,7 +188,8 @@ public class WellbeingManager : MonoBehaviour
         socialVal = socialVal - damageValue;
         physicalVal = physicalVal - damageValue;
         moneyVal = moneyVal - damageValue;
-        FindObjectOfType<AudioManagerScript>().Play("Hurt");
+        //FindObjectOfType<AudioManagerScript>().Play("Hurt");
+        amScript.Play("Hurt");
     }   
     
     public void HitMoney()
@@ -177,7 +198,8 @@ public class WellbeingManager : MonoBehaviour
         socialVal = socialVal - damageValue;
         physicalVal = physicalVal - damageValue;
         academicVal = academicVal - damageValue;
-        FindObjectOfType<AudioManagerScript>().Play("Hurt");
+        //FindObjectOfType<AudioManagerScript>().Play("Hurt");
+        amScript.Play("Hurt");
     }
 
         //Functional Voids
