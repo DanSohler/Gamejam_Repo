@@ -56,6 +56,7 @@ public class EnemyHealthManager : MonoBehaviour
             {
                 wellbeingManager.AcademicAdd();
             }
+            FindObjectOfType<AudioManagerScript>().Play("RobotDeath");
             Destroy(gameObject);
         }
     }
