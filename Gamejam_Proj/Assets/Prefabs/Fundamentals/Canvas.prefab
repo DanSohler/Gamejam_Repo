@@ -1614,7 +1614,7 @@ MonoBehaviour:
   physicalVal: 1
   academicVal: 1
   moneyVal: 1
-  fallSpeed: 0.02
+  fallSpeed: 0.015
   socialAdd: 0.0003
   physicalAdd: 0.2
   academicAdd: 0.2
