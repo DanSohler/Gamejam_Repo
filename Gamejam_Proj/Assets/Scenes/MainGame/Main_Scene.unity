@@ -32436,7 +32436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 980475588921232797, guid: 728adab57df269e429a5a1b73b515aba, type: 3}
       propertyPath: spawnDelay
-      value: 0.75
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 980475588921232797, guid: 728adab57df269e429a5a1b73b515aba, type: 3}
       propertyPath: regenScript
