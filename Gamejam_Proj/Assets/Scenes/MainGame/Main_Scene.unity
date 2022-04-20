@@ -31628,6 +31628,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8697359988596762724, guid: f0b89c940abb0344aa6d3caf65cb4dcc, type: 3}
+      propertyPath: shotDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8952316662382074999, guid: f0b89c940abb0344aa6d3caf65cb4dcc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.022326946
