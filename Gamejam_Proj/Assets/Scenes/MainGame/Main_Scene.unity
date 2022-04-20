@@ -2544,6 +2544,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
+      propertyPath: moneyAdd
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
       propertyPath: moneyVal
       value: 1
       objectReference: {fileID: 0}
@@ -2557,7 +2561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
       propertyPath: academicAdd
-      value: 0.05
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
       propertyPath: academicVal
