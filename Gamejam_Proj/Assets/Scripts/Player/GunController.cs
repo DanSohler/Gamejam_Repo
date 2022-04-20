@@ -19,6 +19,15 @@ public class GunController : MonoBehaviour
 
     public Animator playerAnom;
 
+    public GameObject am;
+    public AudioManagerScript amScript;
+
+    private void Awake()
+    {
+        am = GameObject.FindWithTag("AM");
+        amScript = am.GetComponent<AudioManagerScript>();
+    }
+
     public void GunShot()
     {
         if (currentGunType == 0)
@@ -28,7 +37,7 @@ public class GunController : MonoBehaviour
                 shotCounter -= Time.deltaTime;
                 if (shotCounter <= 0)
                 {
-                    FindObjectOfType<AudioManagerScript>().Play("Shoot");
+                    amScript.Play("Shoot");
                     playerAnom.SetTrigger("Shoot");
                     shotCounter = timeBetweenShots;
                     BulletController newBullet = Instantiate(bullet, firePoint[0].transform.position, firePoint[0].transform.rotation) as BulletController;
@@ -49,7 +58,7 @@ public class GunController : MonoBehaviour
                 shotCounter -= Time.deltaTime;
                 if (shotCounter <= 0)
                 {
-                    FindObjectOfType<AudioManagerScript>().Play("ShootShot");
+                    amScript.Play("ShootShot");
                     playerAnom.SetTrigger("Shoot");
                     shotCounter = timeBetweenShots;
                     BulletController newBullet = Instantiate(bullet, firePoint[0].transform.position, firePoint[0].transform.rotation) as BulletController;
