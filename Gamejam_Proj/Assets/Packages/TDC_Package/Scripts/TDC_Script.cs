@@ -10,7 +10,6 @@ public class TDC_Script : MonoBehaviour
 
     //cc
     public CharacterController characterController;
-    
 
     //smooth turning Values
     public float turnSmoothTime = 0.08f;
@@ -43,6 +42,9 @@ public class TDC_Script : MonoBehaviour
 
         //Set Movement
         transform.Translate(new Vector3(horizontal, 0, vertical) * (speed * Time.deltaTime));
+
+        transform.position = new Vector3(transform.position.x, 1.4f, transform.position.z);
+
 
         //Smooth Turning
         if (direction.magnitude >= 0.1f)
