@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class WellbeingManager : MonoBehaviour
 {
@@ -35,6 +37,8 @@ public class WellbeingManager : MonoBehaviour
     public bool academicRegen = false;
     public bool moneyRegen = false;
 
+    //canvas
+    public Animator canvas;
 
     // Update is called once per frame
     void Update()
@@ -63,6 +67,18 @@ public class WellbeingManager : MonoBehaviour
         }
         */
 
+        if (isDead)
+        {
+            StartCoroutine(GameOver());
+        }
+
+    }
+
+    IEnumerator GameOver()
+    {
+        canvas.SetTrigger("GameOver");
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(3);
     }
 
     void DeathCheck()
@@ -120,6 +136,8 @@ public class WellbeingManager : MonoBehaviour
         physicalVal = physicalVal - damageValue;
         academicVal = academicVal - damageValue;
         moneyVal = moneyVal - damageValue;
+        FindObjectOfType<AudioManagerScript>().Play("Hurt");
+
     }
 
     public void HitPhysical()
@@ -128,6 +146,7 @@ public class WellbeingManager : MonoBehaviour
         socialVal = socialVal - damageValue;
         academicVal = academicVal - damageValue;
         moneyVal = moneyVal - damageValue;
+        FindObjectOfType<AudioManagerScript>().Play("Hurt");
     }
 
     public void HitAcademic()
@@ -136,6 +155,7 @@ public class WellbeingManager : MonoBehaviour
         socialVal = socialVal - damageValue;
         physicalVal = physicalVal - damageValue;
         moneyVal = moneyVal - damageValue;
+        FindObjectOfType<AudioManagerScript>().Play("Hurt");
     }   
     
     public void HitMoney()
@@ -144,6 +164,7 @@ public class WellbeingManager : MonoBehaviour
         socialVal = socialVal - damageValue;
         physicalVal = physicalVal - damageValue;
         academicVal = academicVal - damageValue;
+        FindObjectOfType<AudioManagerScript>().Play("Hurt");
     }
 
         //Functional Voids
