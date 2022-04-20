@@ -5471,6 +5471,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4441923030646601151, guid: f0b89c940abb0344aa6d3caf65cb4dcc, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5063833045585137642, guid: f0b89c940abb0344aa6d3caf65cb4dcc, type: 3}
       propertyPath: m_IsActive
       value: 0
