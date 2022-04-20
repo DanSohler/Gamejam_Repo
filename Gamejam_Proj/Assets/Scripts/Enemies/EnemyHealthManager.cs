@@ -12,6 +12,11 @@ public class EnemyHealthManager : MonoBehaviour
     public RegenVolume regenScript;
     public AcademicManager acaMan;
 
+    //fix for audio
+    public GameObject am;
+    public AudioManagerScript amScript;
+
+
     [Tooltip("0 = Social, 1 = Physical, 2 = Academic, 3 = Financial")]
     [Range(0, 3)] public int wellbeingID;
     public string wellbeingState;
@@ -21,6 +26,10 @@ public class EnemyHealthManager : MonoBehaviour
         wellbeingManager = FindObjectOfType<WellbeingManager>();
         regenScript = FindObjectOfType<RegenVolume>();
         acaMan = FindObjectOfType<AcademicManager>();
+
+        am = GameObject.FindWithTag("AM");
+        amScript = am.GetComponent<AudioManagerScript>();
+
     }
 
     void Start()
@@ -56,7 +65,7 @@ public class EnemyHealthManager : MonoBehaviour
             {
                 wellbeingManager.AcademicAdd();
             }
-            FindObjectOfType<AudioManagerScript>().Play("RobotDeath");
+            amScript.Play("RobotDeath");
             Destroy(gameObject);
         }
     }
