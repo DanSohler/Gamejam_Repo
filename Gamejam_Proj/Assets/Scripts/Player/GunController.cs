@@ -12,22 +12,15 @@ public class GunController : MonoBehaviour
     public float bulletSpeed;
 
     public float timeBetweenShots;
-    private float shotCounter;
+    public float shotCounter;
 
     public GameObject[] firePoint = new GameObject[5];
     private int currentGunType;
 
     public Animator playerAnom;
 
-
-
-    // Update is called once per frame
-    void Update()
+    public void GunShot()
     {
-        //sets what gun is active
-        currentGunType = playerScript.currentGun;
-
-        // for the pistol
         if (currentGunType == 0)
         {
             if (isFiring)
@@ -72,25 +65,15 @@ public class GunController : MonoBehaviour
                 shotCounter = 0;
             }
         }
+    }
 
-        /*
-        // for the Boom
-        if (currentGunType == 2)
-        {
-            if (isFiring)
-            {
-                shotCounter -= Time.deltaTime;
-                if (shotCounter <= 0)
-                {
-                    shotCounter = timeBetweenShots;
-                    BulletController newBullet = Instantiate(bullet, firePoint[0].transform.position, firePoint[0].transform.rotation) as BulletController;
-                    newBullet.speed = bulletSpeed;
-                }
-            }
-            else
-            {
-                shotCounter = 0;
-            }
-        } */
+    // Update is called once per frame
+    void Update()
+    {
+        //sets what gun is active
+        currentGunType = playerScript.currentGun;
+        GunShot();
+        // for the pistol
+
     }
 }

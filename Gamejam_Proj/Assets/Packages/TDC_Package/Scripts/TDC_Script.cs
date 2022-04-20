@@ -7,6 +7,8 @@ public class TDC_Script : MonoBehaviour
     //Speed Values
     public float SetSpeed = 5;
     private float speed;
+    public float shotDelay = 0.2f;
+    private float shotElaspedTime = 0f;
 
     //cc
     public CharacterController characterController;
@@ -34,6 +36,9 @@ public class TDC_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //gun delay timer
+        shotElaspedTime += Time.deltaTime;
+
         //Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -70,9 +75,11 @@ public class TDC_Script : MonoBehaviour
 
 
         //Shoots gun
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && shotElaspedTime >= shotDelay)
         {
+            shotElaspedTime = 0;
             activeGun[currentGun].GetComponent<GunController>().isFiring = true;
+                
         }
 
         if (Input.GetMouseButtonUp(0))
