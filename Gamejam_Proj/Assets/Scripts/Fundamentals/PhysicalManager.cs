@@ -18,13 +18,28 @@ public class PhysicalManager : MonoBehaviour
         wellbeingManager = FindObjectOfType<WellbeingManager>();
     }
 
+
+    public void ResetPoints()
+    {
+        relayPoints[pointA].SetActive(true);
+    }
+
+    public void VoidPoints()
+    {
+        relayPoints[pointA].SetActive(false);
+        relayPoints[pointB].SetActive(false);
+        playerEntered = false;
+        relayCounter = 0;
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (!playerEntered)
         {
             if (other.gameObject.tag == "Player")
             {
-                relayPoints[pointA].SetActive(true);
+                ResetPoints();
             }
         }
     }
@@ -33,9 +48,7 @@ public class PhysicalManager : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            relayPoints[pointA].SetActive(false);
-            relayPoints[pointB].SetActive(false);
-            relayCounter = 0;
+            VoidPoints();
         }
 
     }

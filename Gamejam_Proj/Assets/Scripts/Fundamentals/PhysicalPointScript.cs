@@ -31,6 +31,7 @@ public class PhysicalPointScript : MonoBehaviour
                 phsManager.relayCounter = +1;
             }
         }
+
         else
         {
             if (other.gameObject.tag == "Player")

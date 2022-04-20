@@ -6,6 +6,8 @@ public class MoneyPointManager : MonoBehaviour
 {
     public WellbeingManager wellbeingManager;
 
+    public BoxScript boxScript;
+
     private bool playerEnteredArea = false;
     public bool boxGrabbed = false;
     public int chosenPointA;
@@ -13,8 +15,13 @@ public class MoneyPointManager : MonoBehaviour
 
     public bool boxAreaEntered = false;
 
-
     public GameObject[] boxPoints = new GameObject[9];
+
+    private void Awake()
+    {
+        wellbeingManager = FindObjectOfType<WellbeingManager>();
+        boxScript = FindObjectOfType<BoxScript>();
+    }
 
     private void Update()
     {
@@ -23,6 +30,26 @@ public class MoneyPointManager : MonoBehaviour
             StartCoroutine(BoxTimer());
             boxAreaEntered = false;
         }
+    }
+
+    public void ResetMoArea()  
+    {
+        chosenPointA = Random.Range(0, 9);
+        boxPoints[chosenPointA].SetActive(true);
+        playerEnteredArea = true;
+    }
+
+    public void VoidMoArea()
+    {
+        boxScript.BoxOff();
+        boxGrabbed = false;
+        playerEnteredArea = false;
+
+        boxPoints[chosenPointA].SetActive(false);
+        boxPoints[chosenPointB].SetActive(false);
+
+        chosenPointA = 0;
+        chosenPointB = 0;
 
     }
 
@@ -32,33 +59,28 @@ public class MoneyPointManager : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
-                chosenPointA = Random.Range(0, 9);
-                boxPoints[chosenPointA].SetActive(true);
-                playerEnteredArea = true;
+                ResetMoArea();
             }
-        }
-                
+        }    
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (playerEnteredArea)
         {
-            playerEnteredArea = false;
-
-            boxPoints[chosenPointA].SetActive(false);
-            boxPoints[chosenPointB].SetActive(false);
-
-            chosenPointA = 0;
-            chosenPointB = 0;
+            if (other.gameObject.tag == "Player")
+            {
+                VoidMoArea();
+            }
         }
+        
     }
 
 
 
     public IEnumerator BoxTimer()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         boxPoints[chosenPointB].SetActive(true);
         boxGrabbed = true;
     }
