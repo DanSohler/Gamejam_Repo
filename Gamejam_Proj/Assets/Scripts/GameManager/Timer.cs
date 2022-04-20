@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     public GameObject victory;
 
     float currentTime;
-    float startingTime = 10;
+    float startingTime = 60;
     bool timerbool;
 
 
