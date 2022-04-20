@@ -17,7 +17,7 @@ public class TitleScript : MonoBehaviour
         fade.SetTrigger("Fade");
         click.Play();
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
 
     }
     public void QuitGame()

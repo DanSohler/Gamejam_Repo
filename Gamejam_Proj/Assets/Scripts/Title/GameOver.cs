@@ -21,7 +21,7 @@ public class GameOver : MonoBehaviour
     {
         fade.SetTrigger("Fade");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
 
     }
     public void QuitGame()

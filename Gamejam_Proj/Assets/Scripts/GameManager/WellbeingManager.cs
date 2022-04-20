@@ -88,7 +88,7 @@ public class WellbeingManager : MonoBehaviour
         FindObjectOfType<AudioManagerScript>().Play("Death");
         canvas.SetTrigger("GameOver");
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     void DeathCheck()

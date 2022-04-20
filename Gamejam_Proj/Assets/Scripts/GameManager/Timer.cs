@@ -13,6 +13,11 @@ public class Timer : MonoBehaviour
     float startingTime = 10;
     bool timerbool;
 
+
+    //Sound
+    public GameObject am;
+    public AudioManagerScript amScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +25,11 @@ public class Timer : MonoBehaviour
         timer.text = "01:00";
         currentTime = startingTime;
         timerbool = true;
+
+
+        //Sound
+        am = GameObject.FindWithTag("AM");
+        amScript = am.GetComponent<AudioManagerScript>();
     }
 
 
@@ -47,7 +57,8 @@ public class Timer : MonoBehaviour
             {
                 timerbool = false;
                 PreTimeCheck();
-                FindObjectOfType<AudioManagerScript>().Play("Tick");
+                //FindObjectOfType<AudioManagerScript>().Play("Tick");
+                amScript.Play("Tick");
             }
         }
 
@@ -67,9 +78,9 @@ public class Timer : MonoBehaviour
 
     IEnumerator WaitForEndGame()
     {
-        FindObjectOfType<AudioManagerScript>().StopPlaying("OST");
+        //FindObjectOfType<AudioManagerScript>().StopPlaying("OST");
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
 
