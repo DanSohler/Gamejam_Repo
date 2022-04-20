@@ -15,7 +15,7 @@ public class GunController : MonoBehaviour
     public float shotCounter;
 
     public GameObject[] firePoint = new GameObject[5];
-    private int currentGunType;
+    public int currentGunType;
 
     public Animator playerAnom;
 
@@ -49,9 +49,7 @@ public class GunController : MonoBehaviour
                 shotCounter = 0;
             }
         }
-
-        // for the spread
-        if (currentGunType == 1)
+        else
         {
             if (isFiring)
             {
@@ -74,14 +72,24 @@ public class GunController : MonoBehaviour
                 shotCounter = 0;
             }
         }
+        
+
+
+
+        // for the spread
+        if (currentGunType == 1)
+        {
+            
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //sets what gun is active
-        currentGunType = playerScript.currentGun;
         GunShot();
+        currentGunType = playerScript.currentGun;
+        
         // for the pistol
 
     }

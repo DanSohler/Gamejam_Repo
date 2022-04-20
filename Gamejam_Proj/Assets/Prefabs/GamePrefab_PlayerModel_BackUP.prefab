@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8675825454529063179}
   - component: {fileID: 1886690216593676891}
   - component: {fileID: 3392603732184325236}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 812202950642282063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpreadBulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3040073817279549482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpreadBulletSpawn (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3004571443242543979}
   - component: {fileID: 3349513965315359166}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,9 +193,13 @@ MonoBehaviour:
   bullet: {fileID: 2318343701897813272, guid: b6e257f8105dab14382811ff115a47f8, type: 3}
   bulletSpeed: 2
   timeBetweenShots: 2
+  shotCounter: 0
   firePoint:
   - {fileID: 5533397601068358716}
+  currentGunType: 0
   playerAnom: {fileID: 0}
+  am: {fileID: 0}
+  amScript: {fileID: 0}
 --- !u!1 &2405845441153255016
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +211,7 @@ GameObject:
   - component: {fileID: 845787160129995322}
   - component: {fileID: 4284923377226005353}
   - component: {fileID: 7134853795889415747}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +292,7 @@ GameObject:
   - component: {fileID: 3029058735085229153}
   - component: {fileID: 2885215731463498872}
   - component: {fileID: 6097386959929839806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +375,7 @@ GameObject:
   - component: {fileID: 1695806317344687606}
   - component: {fileID: 356190097025679395}
   - component: {fileID: 4388429920037209455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunMesh (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +456,7 @@ GameObject:
   - component: {fileID: 6311850061006981433}
   - component: {fileID: 2604399052656422487}
   - component: {fileID: 3989170396716407542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +570,7 @@ GameObject:
   - component: {fileID: 4038363528382583607}
   - component: {fileID: 5623576441149361486}
   - component: {fileID: 8042770229580191860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3235580227795620896}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoomBulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4850442344513779631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpreadBulletSpawn (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5726074857642474876}
   - component: {fileID: 1442108039645829727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1052,9 +1056,13 @@ MonoBehaviour:
   bullet: {fileID: 2318343701897813272, guid: b6e257f8105dab14382811ff115a47f8, type: 3}
   bulletSpeed: 3
   timeBetweenShots: 0.5
+  shotCounter: 0
   firePoint:
   - {fileID: 9089705675774852048}
+  currentGunType: 0
   playerAnom: {fileID: 3919374144627146496}
+  am: {fileID: 0}
+  amScript: {fileID: 0}
 --- !u!1 &8208021369776755395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,7 +1080,7 @@ GameObject:
   - component: {fileID: 4320123432611383856}
   - component: {fileID: 8083872607036825768}
   - component: {fileID: 3919374144627146496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ExampleController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1174,6 +1182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetSpeed: 5
+  shotDelay: 0.2
   characterController: {fileID: 7309769229531964258}
   turnSmoothTime: 0.08
   theGun: {fileID: 1442108039645829727}
@@ -1258,7 +1267,7 @@ GameObject:
   - component: {fileID: 5579873297613447930}
   - component: {fileID: 654251110073211669}
   - component: {fileID: 4771487843975763093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunMesh (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,7 +1347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 867639201730241518}
   - component: {fileID: 3606218400095166587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpreadGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1382,11 +1391,15 @@ MonoBehaviour:
   bullet: {fileID: 2318343701897813272, guid: b6e257f8105dab14382811ff115a47f8, type: 3}
   bulletSpeed: 5
   timeBetweenShots: 0.25
+  shotCounter: 0
   firePoint:
   - {fileID: 415867163643472842}
   - {fileID: 824884501536615416}
   - {fileID: 6743233216286967089}
+  currentGunType: 0
   playerAnom: {fileID: 0}
+  am: {fileID: 0}
+  amScript: {fileID: 0}
 --- !u!1 &8973762640760590285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1411,7 @@ GameObject:
   - component: {fileID: 3028456159448647845}
   - component: {fileID: 4028382451418539803}
   - component: {fileID: 9005711650324592160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1477,7 +1490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3088091859344938714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PistolBulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
