@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TitleScript : MonoBehaviour
 {
     public Animator fade;
-
+    public AudioSource click;
     public void Loadlevel()
     {
         StartCoroutine(FadeOut());
@@ -15,6 +15,7 @@ public class TitleScript : MonoBehaviour
     IEnumerator FadeOut()
     {
         fade.SetTrigger("Fade");
+        click.Play();
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(1);
 
