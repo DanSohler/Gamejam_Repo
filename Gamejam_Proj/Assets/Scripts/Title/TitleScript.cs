@@ -20,6 +20,22 @@ public class TitleScript : MonoBehaviour
         SceneManager.LoadScene(3);
 
     }
+
+    public void Credits()
+    {
+        StartCoroutine(FadeOutC());
+    }
+
+    IEnumerator FadeOutC()
+    {
+        fade.SetTrigger("Fade");
+        click.Play();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(1);
+
+    }
+
+
     public void QuitGame()
     {
         Application.Quit();
