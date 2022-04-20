@@ -32306,7 +32306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 980475588921232797, guid: 728adab57df269e429a5a1b73b515aba, type: 3}
       propertyPath: spawnDelay
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 980475588921232797, guid: 728adab57df269e429a5a1b73b515aba, type: 3}
       propertyPath: regenScript
@@ -45138,7 +45138,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2056404699099114328, guid: 7699e887762c5bc42b22a089982ed051, type: 3}
       propertyPath: spawnDelay
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2056404699099114328, guid: 7699e887762c5bc42b22a089982ed051, type: 3}
       propertyPath: enemySpawner
