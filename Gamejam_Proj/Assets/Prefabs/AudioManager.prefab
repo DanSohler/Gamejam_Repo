@@ -50,3 +50,33 @@ MonoBehaviour:
     pitch: 0
     loop: 0
     source: {fileID: 0}
+  - name: Shoot
+    clip: {fileID: 8300000, guid: 48385b728dcbd1343bc6abbd0c3d4cdf, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: ShootShot
+    clip: {fileID: 8300000, guid: b142aa02a8648c94b999212277216d05, type: 3}
+    volume: 0.877
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Gain
+    clip: {fileID: 8300000, guid: 6b49c26b106d92a4d977d8454d734c3c, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: 8da289687328480439b06319139cd14f, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: OST
+    clip: {fileID: 8300000, guid: d7dd7dd8907c4f54199cd44b51f0056f, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}

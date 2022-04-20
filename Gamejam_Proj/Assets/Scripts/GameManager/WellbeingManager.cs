@@ -40,6 +40,14 @@ public class WellbeingManager : MonoBehaviour
     //canvas
     public Animator canvas;
 
+
+    private void Start()
+    {
+        FindObjectOfType<AudioManagerScript>().Play("OST");
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -76,6 +84,8 @@ public class WellbeingManager : MonoBehaviour
 
     IEnumerator GameOver()
     {
+        FindObjectOfType<AudioManagerScript>().StopPlaying("OST");
+        FindObjectOfType<AudioManagerScript>().Play("Death");
         canvas.SetTrigger("GameOver");
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(3);
@@ -102,6 +112,7 @@ public class WellbeingManager : MonoBehaviour
     
     public void PhysicalAdd()
     {
+        FindObjectOfType<AudioManagerScript>().Play("Gain");
         physicalVal = physicalVal + physicalAdd;
         if (physicalVal > 1)
         {
@@ -111,6 +122,7 @@ public class WellbeingManager : MonoBehaviour
 
     public void AcademicAdd()
     {
+        FindObjectOfType<AudioManagerScript>().Play("Gain");
         academicVal = academicVal + academicAdd;
         if (academicVal > 1)
         {
@@ -120,6 +132,7 @@ public class WellbeingManager : MonoBehaviour
 
     public void MoneyAdd()
     {
+        FindObjectOfType<AudioManagerScript>().Play("Gain");
         moneyVal = moneyVal + moneyAdd;
         if (moneyVal > 1)
         {
