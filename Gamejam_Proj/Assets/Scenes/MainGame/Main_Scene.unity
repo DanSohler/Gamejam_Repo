@@ -675,6 +675,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2959137730608798759, guid: 7ae549359f7be714aa441fd968c1a94f, type: 3}
+      propertyPath: spawnDelay
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959137730608798759, guid: 7ae549359f7be714aa441fd968c1a94f, type: 3}
       propertyPath: enemySpawner
       value: 
       objectReference: {fileID: 1916246742}
@@ -2542,6 +2546,14 @@ PrefabInstance:
     - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
       propertyPath: socialAdd
       value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
+      propertyPath: academicAdd
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245186542114538378, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
+      propertyPath: damageValue
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3245186542115894889, guid: 02dafc4552437874092b8db33fe76c7d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -31524,6 +31536,10 @@ PrefabInstance:
       propertyPath: bulletSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4441923030646601151, guid: f0b89c940abb0344aa6d3caf65cb4dcc, type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5195565358923726642, guid: f0b89c940abb0344aa6d3caf65cb4dcc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -31611,6 +31627,10 @@ PrefabInstance:
     - target: {fileID: 8373108748597881553, guid: f0b89c940abb0344aa6d3caf65cb4dcc, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697359988596762724, guid: f0b89c940abb0344aa6d3caf65cb4dcc, type: 3}
+      propertyPath: shotDelay
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8952316662382074999, guid: f0b89c940abb0344aa6d3caf65cb4dcc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43598,6 +43618,10 @@ PrefabInstance:
     - target: {fileID: 1725889965664050544, guid: d3f32a2d9dc1502469ececd69e959b69, type: 3}
       propertyPath: m_Name
       value: EnemySpawnManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725889965664050545, guid: d3f32a2d9dc1502469ececd69e959b69, type: 3}
+      propertyPath: spawnDelay
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1725889965664050545, guid: d3f32a2d9dc1502469ececd69e959b69, type: 3}
       propertyPath: regenScript
