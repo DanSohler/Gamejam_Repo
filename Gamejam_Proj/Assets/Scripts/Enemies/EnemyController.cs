@@ -31,8 +31,6 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //transform.LookAt(new Vector3(thePlayer.transform.position.x, transform.position.y, thePlayer.transform.position.z));
         MoveToPlayer();
-       // myRB.velocity = (transform.forward * moveSpeed);
     }
 }

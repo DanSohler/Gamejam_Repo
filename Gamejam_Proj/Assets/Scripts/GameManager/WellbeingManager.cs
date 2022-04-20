@@ -264,7 +264,4 @@ public class WellbeingManager : MonoBehaviour
         moneyVal = (moneyVal - fallSpeed * Time.deltaTime);
         yield return null;
     }
-
-
-
 }

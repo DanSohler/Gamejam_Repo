@@ -56,7 +56,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   sightRange: 20
-  attackRange: 12
+  attackRange: 9
   playerInSightRange: 0
   playerInAttackRange: 0
   theirGun: {fileID: 2774547472205347177}
@@ -74,8 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFiring: 0
   bullet: {fileID: 4673790651747662054}
-  bulletSpeed: 1
-  timeBetweenShots: 1
+  bulletSpeed: 3
+  timeBetweenShots: 3
   firePoint: {fileID: 2063467524152766676}
   wellbeingManager: {fileID: 0}
   yourHealth: {fileID: 7999093575735192947}
