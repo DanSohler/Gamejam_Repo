@@ -35,6 +35,7 @@ public class GunController : MonoBehaviour
                 shotCounter -= Time.deltaTime;
                 if (shotCounter <= 0)
                 {
+                    FindObjectOfType<AudioManagerScript>().Play("Shoot");
                     playerAnom.SetTrigger("Shoot");
                     shotCounter = timeBetweenShots;
                     BulletController newBullet = Instantiate(bullet, firePoint[0].transform.position, firePoint[0].transform.rotation) as BulletController;
@@ -55,6 +56,7 @@ public class GunController : MonoBehaviour
                 shotCounter -= Time.deltaTime;
                 if (shotCounter <= 0)
                 {
+                    FindObjectOfType<AudioManagerScript>().Play("ShootShot");
                     playerAnom.SetTrigger("Shoot");
                     shotCounter = timeBetweenShots;
                     BulletController newBullet = Instantiate(bullet, firePoint[0].transform.position, firePoint[0].transform.rotation) as BulletController;
